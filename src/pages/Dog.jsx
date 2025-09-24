@@ -1,5 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import LoadingSpinner from '../components/LoadingSpinner'
+import BackButton from '../components/BackButton'
 
 export default function Dog() {
   const { id } = useParams()
@@ -21,17 +23,12 @@ export default function Dog() {
   }, [id])
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   if (!dog) {
     return (
       <div className="max-w-2xl mx-auto text-center py-12">
-    
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Dog Not Found</h2>
         <p className="text-gray-600 mb-6">The dog you're looking for doesn't exist in our system.</p>
         <Link 
@@ -48,15 +45,7 @@ export default function Dog() {
     <div className="max-w-4xl mx-auto">
      
       <div className="mb-6">
-        <Link 
-          to="/catalog" 
-          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Catalog
-        </Link>
+        <BackButton />
       </div>
 
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
