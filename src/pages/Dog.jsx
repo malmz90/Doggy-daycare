@@ -7,7 +7,7 @@ export default function Dog() {
   const { id } = useParams()
   const [dog, setDog] = useState(null)
   const [loading, setLoading] = useState(true)
-  console.log(dog)
+  console.log("test")
   useEffect(() => {
     fetch('https://api.jsonbin.io/v3/b/68d1168e43b1c97be94b3fbb')
       .then(res => res.json())
