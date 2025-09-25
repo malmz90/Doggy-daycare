@@ -2,7 +2,7 @@
   "name": "doggy-daycare",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://malmz.github.io/Doggy-daycare",
+  "homepage": "https://malmz90.github.io/Doggy-daycare",
   "type": "module",
   "scripts": {
     "dev": "vite",
